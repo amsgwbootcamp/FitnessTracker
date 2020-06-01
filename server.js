@@ -16,8 +16,7 @@ app.use(express.static("public"));
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 
-mongoose.connect(process.env.MONGODB_URI || 
-                 { useNewUrlParser: true, useFindAndModify: false }); 
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false }); 
 
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
